@@ -1,0 +1,47 @@
+﻿@model IEnumerable<DemoProjectSem3.Models.Chitietdonhang>
+
+@{ ViewBag.Title = "Details";
+                Layout = "~/Views/Shared/_Layout.cshtml"; }
+
+<h2>Chi tiết đơn hàng</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            Amount
+        </th>
+        <th>
+            Order
+        </th>
+        <th>
+            Recipe
+        </th>
+        <th>
+            Book
+        </th>
+        <th>
+            Price
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.amount)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.order_id)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.recipe_id)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.book_id)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.total_price)
+    </td>
+</tr>}
+
+</table>
